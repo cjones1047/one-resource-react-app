@@ -123,7 +123,7 @@ const ShowSupe = (props) => {
                             Give {supe.name} a toy!
                         </Button> */}
                         {
-                            supe.owner && user && supe.owner._id === user._id
+                            supe.owner && user && supe.owner._id === user.id
                             ?
                             <>
                                 <Button onClick={() => setEditModalShow(true)} className="m-2" variant="warning">
