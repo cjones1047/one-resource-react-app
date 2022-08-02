@@ -5,3 +5,8 @@ import axios from 'axios'
 export const getAllSupes = () => {
     return axios(`${apiUrl}/supes`)
 }
+
+// SHOW
+export const getOneSupe = (id) => {
+    return axios(`${apiUrl}/supes/${id}`)
+}

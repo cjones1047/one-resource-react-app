@@ -29,7 +29,7 @@ const SupesIndex = (props) => {
     
     useEffect(() => {
         // console.log('use effect works')
-        console.log(props)
+        console.log('props:\n',props)
         getAllSupes()
             .then(res => setSupes(res.data.supes))
             .catch(err => {
