@@ -116,6 +116,7 @@ const ShowSupe = (props) => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
+                        
                         {/* <Button 
                         onClick={() => setToyModalShow(true)} className="m-2"
                         variant='warning'>
@@ -125,7 +126,6 @@ const ShowSupe = (props) => {
                             supe.owner && user && supe.owner._id === user._id
                             ?
                             <>
-                                
                                 <Button onClick={() => setEditModalShow(true)} className="m-2" variant="warning">
                                     Edit Supe
                                 </Button>

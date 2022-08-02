@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowSupe from './components/supes/ShowSupe'
+import CreateSupe from './components/supes/CreateSupe'
 
 const App = () => {
 
@@ -72,6 +73,14 @@ const App = () => {
 				<Route
 					path='/supes/:id'
 					element={ <ShowSupe user={user} msgAlert={ msgAlert }/>}
+				/>
+				<Route
+					path='/addSupe'
+					element={ 
+						<RequireAuth user={ user }>
+							<CreateSupe msgAlert={ msgAlert } user={ user }/>
+						</RequireAuth>
+					}
 				/>
 			</Routes>
 				{msgAlerts.map((msgAlert) => (
