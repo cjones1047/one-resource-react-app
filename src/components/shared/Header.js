@@ -4,7 +4,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 const linkStyle = {
     color: 'white',
-    textDecoration: 'none'
+    textDecoration: 'none',
+	opacity: '1'
 }
 const authenticatedOptions = (
 	<>
@@ -48,7 +49,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-	<Navbar bg='primary' variant='dark' expand='md'>
+	<Navbar bg='dark' variant='dark' expand='md' style={{opacity: '0.9'}}>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
                 Supes App

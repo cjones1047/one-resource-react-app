@@ -1,3 +1,5 @@
+import './SupesIndex.css'
+
 import { useState, useEffect } from 'react'
 // SupesIndex should make a request to the api
 // To get all supes
@@ -52,11 +54,11 @@ const SupesIndex = (props) => {
     }
 
     const supeCards = supes.map(supe => 
-        <Card style={{width: '30%', margin: 5}} key={supe._id}>
+        <Card bg={'secondary'} text={'light'} style={{width: '30%', margin: 5}} key={supe._id}>
             <Card.Header>{ supe.name }</Card.Header>
             <Card.Body>
                 <Card.Text>
-                    <Link to={`/supes/${supe._id}`}>View { supe.name }</Link>
+                    <Link style={{backgroundColor: 'whitesmoke', padding: '5px', borderRadius: '5px', textDecoration: 'none', color: 'black'}} to={`/supes/${supe._id}`}>View { supe.name }</Link>
                 </Card.Text>
             </Card.Body>
         </Card>

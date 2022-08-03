@@ -65,8 +65,8 @@ const EditSupeModal = (props) => {
 
     return (
         <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton/>
-            <Modal.Body>
+            <Modal.Header closeButton style={{backgroundColor: 'rgb(177, 177, 177)'}}/>
+            <Modal.Body style={{backgroundColor: 'black'}}>
                 <SupeForm
                     supe={supe}
                     handleChange={handleChange}

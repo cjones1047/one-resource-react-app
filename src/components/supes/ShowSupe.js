@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react'
 
 // this will allow us to see our parameters
@@ -97,7 +96,7 @@ const ShowSupe = (props) => {
     return (
         <>
             <Container className='fluid'>
-                <Card>
+                <Card bg={'secondary'} text={'light'} style={{marginTop: '80px'}}>
                     <Card.Header>
                         { supe.name }
                     </Card.Header>

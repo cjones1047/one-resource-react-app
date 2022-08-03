@@ -1,0 +1,8 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: url('./assets/comic-cartoon-background-with-city-silhouette-cloud-illustration.png') no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}

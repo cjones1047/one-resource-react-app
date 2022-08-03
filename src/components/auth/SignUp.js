@@ -56,7 +56,7 @@ const SignUp = (props) => {
 
 
     return (
-        <div className='row'>
+        <div className='row' style={{color:'white', textShadow: '3px 3px 3px black'}}>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
                 <h3>Sign Up</h3>
                 <Form onSubmit={onSignUp}>
@@ -93,7 +93,7 @@ const SignUp = (props) => {
                             onChange={e => setPasswordConfirmation(e.target.value)}
                         />
                     </Form.Group>
-                    <Button variant='primary' type='submit'>
+                    <Button variant='secondary' type='submit' style={{marginTop: '10px'}}>
                         Submit
                     </Button>
                 </Form>

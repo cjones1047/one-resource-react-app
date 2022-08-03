@@ -9,7 +9,7 @@ const SupeForm = (props) => {
     const { supe, handleChange, heading, handleSubmit } = props
     return (
       <>
-        <Container className='justify-content-center'>
+        <Container className='justify-content-center' style={{color:'white', textShadow: '3px 3px 3px black', marginTop: '20px'}}>
             <h3>{heading}</h3>
             <Form onSubmit={handleSubmit}>
                 <Row className="mb-3">
@@ -56,7 +56,7 @@ const SupeForm = (props) => {
                     </Form.Group>
                 </Row>
 
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Submit
                 </Button>
             </Form>
