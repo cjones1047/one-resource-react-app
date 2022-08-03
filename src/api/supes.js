@@ -48,3 +48,14 @@ export const updateSupe = (user, updatedSupe) => {
 		}
 	})
 }
+
+// DELETE
+export const removeSupe = (user, supeId) => {
+	return axios({
+		url:`${apiUrl}/supes/${supeId}`,
+		method: 'DELETE',
+		headers: {
+			Authorization: `Token token=${user.token}`
+		}
+	})
+}

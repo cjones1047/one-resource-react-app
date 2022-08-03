@@ -8,20 +8,13 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Container, Card, Button } from 'react-bootstrap'
 
 import LoadingScreen from '../shared/LoadingScreen'
-import { getOneSupe, updateSupe } from '../../api/supes'
+import { getOneSupe, updateSupe, removeSupe } from '../../api/supes'
 import messages from '../shared/AutoDismissAlert/messages'
 import EditSupeModal from './EditSupeModal'
 
 // We need to get the supe's id from the parameters
 // Then we need to make a request to the api
 // Then we need to display the results in this component
-
-// we'll use a style object to lay out the toy cards
-// const cardContainerLayout = {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     flexFlow: 'row wrap'
-// }
 
 const ShowSupe = (props) => {
     const [supe, setSupe] = useState(null)
@@ -55,31 +48,31 @@ const ShowSupe = (props) => {
 
     // here, we'll declare a function that runs which will remove the supe
     // this function's promise chain should send a message, and then go somewhere
-    // const removeTheSupe = () => {
-    //     removeSupe(user, supe.id)
-    //         // on success, send a success message
-    //         .then(() => {
-    //             msgAlert({
-    //                 heading: 'Success',
-    //                 message: messages.removeSupeSuccess,
-    //                 variant: 'success'
-    //             })
-    //         })
-    //         // then navigate to index
-    //         .then(() => {
-    //             navigate('/')
-    //         })
-    //         // on failure, send a failure message
-    //         .catch(err => {
-    //             navigate('/')
-    //             // navigate back to home page if there's an error fetching
-    //             msgAlert({
-    //                 heading: 'Error removing supe',
-    //                 message: messages.removeSupeFailure,
-    //                 variant: 'danger'
-    //             })
-    //         })
-    // }
+    const removeTheSupe = () => {
+        removeSupe(user, supe._id)
+            // on success, send a success message
+            .then(() => {
+                msgAlert({
+                    heading: 'Success',
+                    message: messages.removeSupeSuccess,
+                    variant: 'success'
+                })
+            })
+            // then navigate to index
+            .then(() => {
+                navigate('/')
+            })
+            // on failure, send a failure message
+            .catch(err => {
+                navigate('/')
+                // navigate back to home page if there's an error fetching
+                msgAlert({
+                    heading: 'Error removing supe',
+                    message: messages.removeSupeFailure,
+                    variant: 'danger'
+                })
+            })
+    }
 
     // let toyCards
     // if(supe) {
@@ -129,7 +122,7 @@ const ShowSupe = (props) => {
                                 <Button onClick={() => setEditModalShow(true)} className="m-2" variant="warning">
                                     Edit Supe
                                 </Button>
-                                <Button onClick={() => {}} className="m-2" variant="danger">
+                                <Button onClick={() => removeTheSupe()} className="m-2" variant="danger">
                                     Remove Supe
                                 </Button>
                             </>

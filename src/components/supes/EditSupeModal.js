@@ -8,13 +8,12 @@ const EditSupeModal = (props) => {
 
     const [supe, setSupe] = useState(props.supe)
 
-    console.log('supe in edit modal', supe)
-
     const handleChange = (e) => {
         setSupe(prevSupe => {
             let updatedValue = e.target.value
             const updatedName = e.target.name
 
+            console.log('supe in edit modal', supe)
             console.log('this is the input type', e.target.type)
 
             if (e.target.type === 'number') {
@@ -72,7 +71,7 @@ const EditSupeModal = (props) => {
                     supe={supe}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    heading="Update Supe"
+                    heading="Update Supe:"
                 />
             </Modal.Body>
         </Modal>
