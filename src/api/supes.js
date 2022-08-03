@@ -31,3 +31,20 @@ export const createSupe = (user, newSupe) => {
 		},
 	})
 }
+
+// UPDATE
+export const updateSupe = (user, updatedSupe) => {
+    console.log('updateSupe in API was hit')
+    console.log('this is user', user)
+    console.log('this is updatedSupe', updatedSupe)
+	return axios({
+		url: `${apiUrl}/supes/${updatedSupe._id}`,
+		method: 'PATCH',
+		headers: {
+			Authorization: `Token token=${user.token}`
+		},
+		data: {
+			supe: updatedSupe
+		}
+	})
+}

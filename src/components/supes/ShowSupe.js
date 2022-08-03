@@ -8,8 +8,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Container, Card, Button } from 'react-bootstrap'
 
 import LoadingScreen from '../shared/LoadingScreen'
-import { getOneSupe } from '../../api/supes'
+import { getOneSupe, updateSupe } from '../../api/supes'
 import messages from '../shared/AutoDismissAlert/messages'
+import EditSupeModal from './EditSupeModal'
 
 // We need to get the supe's id from the parameters
 // Then we need to make a request to the api
@@ -110,7 +111,6 @@ const ShowSupe = (props) => {
                     <Card.Body>
                         <Card.Text>
                             <div>{ supe.description }</div>
-                            
                             <div>{ supe.hero ? 'Hero' : 'Villain' }</div>
                             <div>Rating: { supe.rating }</div>
                         </Card.Text>
@@ -139,12 +139,8 @@ const ShowSupe = (props) => {
                     </Card.Footer>
                 </Card>
             </Container>
-
-            {/* <Container style={cardContainerLayout}>
-                {toyCards}
-            </Container> */}
             
-            {/* <EditSupeModal 
+            <EditSupeModal 
                 user={user}
                 supe={supe}
                 show={editModalShow}
@@ -153,14 +149,6 @@ const ShowSupe = (props) => {
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 handleClose={() => setEditModalShow(false)}
             />
-            <NewToyModal
-                supe={supe}
-                show={toyModalShow}
-                user={user}
-                msgAlert={msgAlert}
-                triggerRefresh={() => setUpdated(prev => !prev)}
-                handleClose={() => setToyModalShow(false)}
-            /> */}
 
         </>
     )
